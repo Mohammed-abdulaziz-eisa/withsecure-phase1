@@ -54,8 +54,8 @@ To get started with the WithSecure ML Pipeline, follow these steps:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/<your-org>/cuddly-wolf-ds.git
-   cd cuddly-wolf-ds/
+   git clone https://github.com/Mohammed-abdulaziz-eisa/withsecure-phase1
+   cd withsecure-phase1
    ```
 
 2. **Install dependencies with Poetry**
