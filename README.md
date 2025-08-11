@@ -1,7 +1,7 @@
 # from Notebooks 2 MLOps
 
 
-cuddly-Wolf -- Data Science task (notebooks2MLOps) - phase 1 
+Data Science task (notebooks2MLOps) - phase 1 
 
 - this project have three important phases with three repos to represent how i go throw all the project and how i handle any data problem from notebooks creating to Developing a Model Inference API 
 
@@ -18,12 +18,19 @@ cuddly-Wolf -- Data Science task (notebooks2MLOps) - phase 1
 - with following this steps i made:
 
 1 - **From Jupyter to Application Code Transformation**
+
 2 - **Python Dependency Management Setup with Poetry**
+
 3 - **Python Parametrization Setup with Pydantic**
+
 4 - **Python Logging Setup with Loguru**
+
 5 - **Foundations of Codebase Architecture & Clean Code Techniques for Software Excellence** (try my best)
+
 6 - **Streamlining Code Quality Linters and Formatters**
+
 7 - **Code Automation with Makefiles**
+
 8 - **CICD with GitHub Actions**
 
 #### Second Phase i called it `From Monolith to Microservices architecture`
@@ -65,7 +72,7 @@ To get started with the WithSecure ML Pipeline, follow these steps:
 
 - Ensure that a `data` folder exists in the project root directory have the original data of the project before running the pipeline.
 
-- a bad part for `data` :
+#### a bad part for `data` :
 
 - which i just load the data from the path data but if the data have headers i will start to make Database Setup and Python Connectivity with SqlAlchemy 
 
