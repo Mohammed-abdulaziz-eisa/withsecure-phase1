@@ -290,8 +290,8 @@ data/
 !data/test_data.csv
 !data/test_labels.csv
 
-# # Jupyter notebooks
-*.ipynb
+# # # Jupyter notebooks
+# *.ipynb
 
 # Documentation builds
 docs/_build/
