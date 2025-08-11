@@ -1,0 +1,51 @@
+# Deploy Workflow (manual)
+
+name: Deploy Workflow (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+        - staging
+        - production
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Build application
+      uses: ./.github/actions/build-application
+
+    - name: Run all checks
+      run: poetry run make check
+
+    - name: Run all tests
+      run: poetry run make test
+
+      
+    - name: Train production model
+      run: poetry run make train
+
+    - name: Deploy to environment
+      run: |
+        echo "Deploying to ${{ github.event.inputs.environment || 'staging' }}"
+        echo "Version: ${{ github.ref_name }}"
+        echo "Deployment completed successfully!"

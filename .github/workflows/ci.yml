@@ -1,0 +1,72 @@
+# Continuous Integration Workflow
+
+name: CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+
+  quality-checks:
+    runs-on: ubuntu-latest
+    name: Code Quality Checks
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Detect project directory
+      id: proj
+      shell: bash
+      run: |
+        if [ -f "pyproject.toml" ]; then
+          echo "dir=." >> "$GITHUB_OUTPUT"
+        else
+          first=$(git ls-files "**/pyproject.toml" | head -n1 || true)
+          if [ -z "$first" ]; then
+            echo "No pyproject.toml found" >&2
+            exit 1
+          fi
+          echo "dir=$(dirname "$first")" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Build application
+      uses: ./.github/actions/build-application
+      
+
+    - name: Format code
+      run: poetry run make format
+      working-directory: ${{ steps.proj.outputs.dir }}
+
+    - name: Lint code
+      run: poetry run make lint
+      working-directory: ${{ steps.proj.outputs.dir }}
+
+    - name: Type check
+      run: poetry run make type-check
+      working-directory: ${{ steps.proj.outputs.dir }}
+
+    - name: Run basic tests
+      run: poetry run make test
+      working-directory: ${{ steps.proj.outputs.dir }}
+
+    - name: Upload quality check results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: quality-check-results
+        path: |
+          .ruff_cache/
+          .mypy_cache/
+          .pytest_cache/
+

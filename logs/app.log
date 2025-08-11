@@ -1,0 +1,1016 @@
+2025-08-10 22:00:19.372 | INFO     | config.db:<module>:74 - Database engine created with connection: sqlite:///./src/db/ml_pipeline.db
+2025-08-10 22:00:20.685 | INFO     | __main__:main:35 - Running the binary classification application...
+2025-08-10 22:00:20.685 | INFO     | db.db_service:__init__:33 - DatabaseService initialized
+2025-08-10 22:00:20.685 | INFO     | model.model_service:__init__:42 - ModelService initialized
+2025-08-10 22:00:20.686 | INFO     | db.db_service:__init__:33 - DatabaseService initialized
+2025-08-10 22:00:20.690 | INFO     | db.db_service:create_tables:39 - Database tables created successfully
+2025-08-10 22:00:20.690 | INFO     | __main__:main:43 - Database initialized
+2025-08-10 22:00:20.690 | INFO     | model.model_service:load_model:54 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-10 22:00:20.691 | WARNING  | model.model_service:load_model:62 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-10 22:00:20.691 | INFO     | model.pipeline.model:build_model:361 - Starting model building process...
+2025-08-10 22:00:20.691 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:00:20.691 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:00:20.695 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:00:20.695 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:00:20.696 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:00:20.696 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:00:20.697 | WARNING  | model.pipeline.preparation:_validate_data:168 - Unexpected label format: [0 1]
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.preparation:_validate_data:176 - Data validation passed
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {0: 204, 1: 196}
+2025-08-10 22:00:20.697 | INFO     | db.db_service:__init__:33 - DatabaseService initialized
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.model:__init__:74 - BinaryClassificationPipeline initialized
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.model:train_and_validate:95 - Starting model training and validation...
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.model:_log_memory_usage:85 - Memory usage: 82.0%
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:00:20.697 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:00:20.704 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:00:20.704 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:00:20.704 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:00:20.704 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {0: 204, 1: 196}
+2025-08-10 22:00:20.704 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {0: 204, 1: 204}
+2025-08-10 22:00:20.721 | INFO     | model.pipeline.model:train_and_validate:152 - Logistic Regression trained successfully:
+2025-08-10 22:00:20.721 | INFO     | model.pipeline.model:train_and_validate:153 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:00:20.721 | INFO     | model.pipeline.model:train_and_validate:156 -   Training time: 0.02s
+2025-08-10 22:00:20.721 | INFO     | model.pipeline.model:save_artifacts:261 - Saving model artifacts...
+2025-08-10 22:00:20.722 | INFO     | model.pipeline.model:_log_memory_usage:85 - Memory usage: 82.0%
+2025-08-10 22:00:20.731 | INFO     | db.db_service:cleanup_multiple_active_models:297 - Single active model found: logistic_regression_v1_20250809_143116
+2025-08-10 22:00:20.738 | INFO     | db.db_service:store_model:132 - Model logistic_regression_v1_20250810_220020 stored successfully with 2 metrics
+2025-08-10 22:00:20.738 | INFO     | model.pipeline.model:_store_model_in_database:333 - Model logistic_regression_v1_20250810_220020 stored in database successfully
+2025-08-10 22:00:20.738 | INFO     | model.pipeline.model:save_artifacts:290 - Artifacts saved to src/model/models/ml_pipeline_20250810_220020.pkl
+2025-08-10 22:00:20.738 | INFO     | model.pipeline.model:build_model:374 - Model building completed successfully
+2025-08-10 22:00:20.738 | INFO     | model.model_service:load_model:67 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-10 22:00:20.745 | INFO     | model.model_service:load_model:84 - Loaded pipeline from src/model/models/ml_pipeline_20250810_220020.pkl
+2025-08-10 22:00:20.745 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:00:20.746 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:00:20.746 | INFO     | __main__:main:51 - Loaded test data: (80, 10)
+2025-08-10 22:00:20.746 | INFO     | model.model_service:predict_batch:144 - Making batch predictions!
+2025-08-10 22:00:20.750 | INFO     | db.db_service:store_data_artifact:182 - Data artifact test_data_20250810_220020 stored successfully
+2025-08-10 22:00:20.753 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_750703 stored successfully
+2025-08-10 22:00:20.754 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_753524 stored successfully
+2025-08-10 22:00:20.755 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_754654 stored successfully
+2025-08-10 22:00:20.756 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_755556 stored successfully
+2025-08-10 22:00:20.757 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_756382 stored successfully
+2025-08-10 22:00:20.757 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_757111 stored successfully
+2025-08-10 22:00:20.759 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_757818 stored successfully
+2025-08-10 22:00:20.760 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_759791 stored successfully
+2025-08-10 22:00:20.761 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_760482 stored successfully
+2025-08-10 22:00:20.762 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_761478 stored successfully
+2025-08-10 22:00:20.763 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_762438 stored successfully
+2025-08-10 22:00:20.763 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_763203 stored successfully
+2025-08-10 22:00:20.764 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_764035 stored successfully
+2025-08-10 22:00:20.765 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_764799 stored successfully
+2025-08-10 22:00:20.767 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_765516 stored successfully
+2025-08-10 22:00:20.768 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_767399 stored successfully
+2025-08-10 22:00:20.768 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_768081 stored successfully
+2025-08-10 22:00:20.769 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_768802 stored successfully
+2025-08-10 22:00:20.770 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_769734 stored successfully
+2025-08-10 22:00:20.771 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_770569 stored successfully
+2025-08-10 22:00:20.772 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_771486 stored successfully
+2025-08-10 22:00:20.773 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_772566 stored successfully
+2025-08-10 22:00:20.774 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_773353 stored successfully
+2025-08-10 22:00:20.774 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_774102 stored successfully
+2025-08-10 22:00:20.775 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_774947 stored successfully
+2025-08-10 22:00:20.776 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_775636 stored successfully
+2025-08-10 22:00:20.776 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_776351 stored successfully
+2025-08-10 22:00:20.777 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_776984 stored successfully
+2025-08-10 22:00:20.778 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_777664 stored successfully
+2025-08-10 22:00:20.779 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_778671 stored successfully
+2025-08-10 22:00:20.780 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_779540 stored successfully
+2025-08-10 22:00:20.781 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_780326 stored successfully
+2025-08-10 22:00:20.781 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_781092 stored successfully
+2025-08-10 22:00:20.782 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_781723 stored successfully
+2025-08-10 22:00:20.783 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_782427 stored successfully
+2025-08-10 22:00:20.783 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_783184 stored successfully
+2025-08-10 22:00:20.784 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_783848 stored successfully
+2025-08-10 22:00:20.785 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_784497 stored successfully
+2025-08-10 22:00:20.785 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_785108 stored successfully
+2025-08-10 22:00:20.786 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_785708 stored successfully
+2025-08-10 22:00:20.788 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_786434 stored successfully
+2025-08-10 22:00:20.789 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_788675 stored successfully
+2025-08-10 22:00:20.790 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_789545 stored successfully
+2025-08-10 22:00:20.791 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_790358 stored successfully
+2025-08-10 22:00:20.791 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_791064 stored successfully
+2025-08-10 22:00:20.792 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_791755 stored successfully
+2025-08-10 22:00:20.793 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_792428 stored successfully
+2025-08-10 22:00:20.794 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_793086 stored successfully
+2025-08-10 22:00:20.794 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_794241 stored successfully
+2025-08-10 22:00:20.795 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_794947 stored successfully
+2025-08-10 22:00:20.796 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_795755 stored successfully
+2025-08-10 22:00:20.797 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_796465 stored successfully
+2025-08-10 22:00:20.797 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_797194 stored successfully
+2025-08-10 22:00:20.798 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_797859 stored successfully
+2025-08-10 22:00:20.799 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_798487 stored successfully
+2025-08-10 22:00:20.799 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_799120 stored successfully
+2025-08-10 22:00:20.800 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_799792 stored successfully
+2025-08-10 22:00:20.801 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_800448 stored successfully
+2025-08-10 22:00:20.801 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_801042 stored successfully
+2025-08-10 22:00:20.802 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_801631 stored successfully
+2025-08-10 22:00:20.802 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_802251 stored successfully
+2025-08-10 22:00:20.803 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_802842 stored successfully
+2025-08-10 22:00:20.804 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_803572 stored successfully
+2025-08-10 22:00:20.804 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_804288 stored successfully
+2025-08-10 22:00:20.805 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_804988 stored successfully
+2025-08-10 22:00:20.806 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_805684 stored successfully
+2025-08-10 22:00:20.806 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_806280 stored successfully
+2025-08-10 22:00:20.807 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_806878 stored successfully
+2025-08-10 22:00:20.808 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_807522 stored successfully
+2025-08-10 22:00:20.808 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_808196 stored successfully
+2025-08-10 22:00:20.809 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_808849 stored successfully
+2025-08-10 22:00:20.810 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_809434 stored successfully
+2025-08-10 22:00:20.810 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_810081 stored successfully
+2025-08-10 22:00:20.811 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_810728 stored successfully
+2025-08-10 22:00:20.811 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_811391 stored successfully
+2025-08-10 22:00:20.812 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_812052 stored successfully
+2025-08-10 22:00:20.814 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_812851 stored successfully
+2025-08-10 22:00:20.815 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_814877 stored successfully
+2025-08-10 22:00:20.816 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_815757 stored successfully
+2025-08-10 22:00:20.817 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_816429 stored successfully
+2025-08-10 22:00:20.819 | INFO     | __main__:main:60 - Predictions saved to ./data/test_labels.csv
+2025-08-10 22:00:20.819 | INFO     | __main__:main:61 - Prediction statistics:
+2025-08-10 22:00:20.819 | INFO     | __main__:main:62 -   Total predictions: 80
+2025-08-10 22:00:20.819 | INFO     | __main__:main:63 -   Class distribution: {0: 38, 1: 42}
+2025-08-10 22:00:20.973 | INFO     | __main__:main:69 - Database prediction stats: {'total_predictions': 15337, 'class_distribution': {1: 15002, -1: 180, 0: 155}, 'avg_processing_time_ms': 5.1, 'latest_prediction': '2025-08-10T20:00:20'}
+2025-08-10 22:00:20.975 | INFO     | __main__:main:73 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'database': {'status': 'healthy', 'connection': 'ok', 'table_counts': {'ml_models': 42, 'predictions': 15337, 'data_artifacts': 30, 'performance_metrics': 58}}}
+2025-08-10 22:00:20.975 | INFO     | model.model_service:predict:109 - Making prediction!
+2025-08-10 22:00:20.976 | ERROR    | db.db_service:store_data_artifact:187 - Failed to store data artifact: (sqlite3.IntegrityError) UNIQUE constraint failed: data_artifacts.artifact_id
+[SQL: INSERT INTO data_artifacts (artifact_id, artifact_type, data_path, data_shape, feature_count, sample_count, preprocessing_steps, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP) RETURNING created_at]
+[parameters: ('test_data_20250810_220020', 'test_data', './data/test_data.csv', '(1, 10)', 10, 1, '{"scaling": "robust_scaler", "feature_count": 10}')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-08-10 22:00:20.976 | ERROR    | model.model_service:_store_test_data_artifact:228 - Failed to store test data artifact: (sqlite3.IntegrityError) UNIQUE constraint failed: data_artifacts.artifact_id
+[SQL: INSERT INTO data_artifacts (artifact_id, artifact_type, data_path, data_shape, feature_count, sample_count, preprocessing_steps, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP) RETURNING created_at]
+[parameters: ('test_data_20250810_220020', 'test_data', './data/test_data.csv', '(1, 10)', 10, 1, '{"scaling": "robust_scaler", "feature_count": 10}')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-08-10 22:00:20.978 | INFO     | db.db_service:store_prediction:234 - Prediction pred_20250810_220020_976930 stored successfully
+2025-08-10 22:00:20.978 | INFO     | __main__:main:78 - Sample prediction: [0]
+2025-08-10 22:03:04.762 | INFO     | config.db:<module>:74 - Database engine created with connection: sqlite:///./src/db/ml_pipeline.db
+2025-08-10 22:03:06.003 | INFO     | __main__:main:35 - Running the binary classification application...
+2025-08-10 22:03:06.003 | INFO     | db.db_service:__init__:33 - DatabaseService initialized
+2025-08-10 22:03:06.003 | INFO     | model.model_service:__init__:43 - ModelService initialized
+2025-08-10 22:03:06.003 | INFO     | db.db_service:__init__:33 - DatabaseService initialized
+2025-08-10 22:03:06.008 | INFO     | db.db_service:create_tables:39 - Database tables created successfully
+2025-08-10 22:03:06.008 | INFO     | __main__:main:43 - Database initialized
+2025-08-10 22:03:06.008 | INFO     | model.model_service:load_model:55 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-10 22:03:06.008 | WARNING  | model.model_service:load_model:63 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-10 22:03:06.008 | INFO     | model.pipeline.model:build_model:367 - Starting model building process...
+2025-08-10 22:03:06.008 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:03:06.008 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:03:06.012 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:03:06.012 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:03:06.013 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:03:06.013 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:03:06.014 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:03:06.014 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-10 22:03:06.014 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-10 22:03:06.014 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-10 22:03:06.014 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:03:06.014 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:03:06.014 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:03:06.015 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-10 22:03:06.015 | INFO     | db.db_service:__init__:33 - DatabaseService initialized
+2025-08-10 22:03:06.015 | INFO     | model.pipeline.model:__init__:74 - BinaryClassificationPipeline initialized
+2025-08-10 22:03:06.015 | INFO     | model.pipeline.model:train_and_validate:95 - Starting model training and validation...
+2025-08-10 22:03:06.015 | INFO     | model.pipeline.model:_log_memory_usage:85 - Memory usage: 81.7%
+2025-08-10 22:03:06.015 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:03:06.015 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:03:06.021 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:03:06.022 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:03:06.022 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:03:06.022 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-10 22:03:06.022 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-10 22:03:06.038 | INFO     | model.pipeline.model:train_and_validate:152 - Logistic Regression trained successfully:
+2025-08-10 22:03:06.038 | INFO     | model.pipeline.model:train_and_validate:153 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:03:06.038 | INFO     | model.pipeline.model:train_and_validate:156 -   Training time: 0.02s
+2025-08-10 22:03:06.038 | INFO     | model.pipeline.model:save_artifacts:267 - Saving model artifacts...
+2025-08-10 22:03:06.038 | INFO     | model.pipeline.model:_log_memory_usage:85 - Memory usage: 81.7%
+2025-08-10 22:03:06.047 | INFO     | db.db_service:cleanup_multiple_active_models:371 - Single active model found: logistic_regression_v1_20250810_220020
+2025-08-10 22:03:06.053 | INFO     | db.db_service:store_model:132 - Model logistic_regression_v1_20250810_220306 stored successfully with 2 metrics
+2025-08-10 22:03:06.053 | INFO     | model.pipeline.model:_store_model_in_database:339 - Model logistic_regression_v1_20250810_220306 stored in database successfully
+2025-08-10 22:03:06.053 | INFO     | model.pipeline.model:save_artifacts:296 - Artifacts saved to src/model/models/ml_pipeline_20250810_220306.pkl
+2025-08-10 22:03:06.053 | INFO     | model.pipeline.model:build_model:380 - Model building completed successfully
+2025-08-10 22:03:06.053 | INFO     | model.model_service:load_model:68 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-10 22:03:06.054 | INFO     | model.model_service:load_model:85 - Loaded pipeline from src/model/models/ml_pipeline_20250810_220306.pkl
+2025-08-10 22:03:06.054 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:03:06.055 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:03:06.055 | INFO     | __main__:main:51 - Loaded test data: (80, 10)
+2025-08-10 22:03:06.055 | INFO     | model.model_service:predict_batch:145 - Making batch predictions!
+2025-08-10 22:03:06.058 | ERROR    | db.db_service:store_data_artifact:204 - Failed to store data artifact: Multiple rows were found when one or none was required
+2025-08-10 22:03:06.058 | ERROR    | model.model_service:_store_test_data_artifact:232 - Failed to store test data artifact: Multiple rows were found when one or none was required
+2025-08-10 22:03:06.067 | INFO     | db.db_service:store_batch_predictions:308 - Batch stored 80 predictions successfully
+2025-08-10 22:03:06.069 | INFO     | __main__:main:60 - Predictions saved to ./data/test_labels.csv
+2025-08-10 22:03:06.069 | INFO     | __main__:main:61 - Prediction statistics:
+2025-08-10 22:03:06.069 | INFO     | __main__:main:62 -   Total predictions: 80
+2025-08-10 22:03:06.070 | INFO     | __main__:main:63 -   Class distribution: {-1: 38, 1: 42}
+2025-08-10 22:03:06.259 | INFO     | __main__:main:69 - Database prediction stats: {'total_predictions': 15418, 'class_distribution': {1: 15044, -1: 218, 0: 156}, 'avg_processing_time_ms': 5.1, 'latest_prediction': '2025-08-10T20:03:06'}
+2025-08-10 22:03:06.260 | INFO     | __main__:main:73 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'database': {'status': 'healthy', 'connection': 'ok', 'table_counts': {'ml_models': 43, 'predictions': 15418, 'data_artifacts': 30, 'performance_metrics': 59}}}
+2025-08-10 22:03:06.260 | INFO     | model.model_service:predict:110 - Making prediction!
+2025-08-10 22:03:06.266 | INFO     | __main__:main:78 - Sample prediction: [-1]
+2025-08-10 22:03:32.012 | INFO     | config.db:<module>:74 - Database engine created with connection: sqlite:///./src/db/ml_pipeline.db
+2025-08-10 22:03:34.415 | INFO     | __main__:main:35 - Running the binary classification application...
+2025-08-10 22:03:34.415 | INFO     | db.db_service:__init__:33 - DatabaseService initialized
+2025-08-10 22:03:34.415 | INFO     | model.model_service:__init__:43 - ModelService initialized
+2025-08-10 22:03:34.415 | INFO     | db.db_service:__init__:33 - DatabaseService initialized
+2025-08-10 22:03:34.419 | INFO     | db.db_service:create_tables:39 - Database tables created successfully
+2025-08-10 22:03:34.419 | INFO     | __main__:main:43 - Database initialized
+2025-08-10 22:03:34.419 | INFO     | model.model_service:load_model:55 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-10 22:03:34.419 | WARNING  | model.model_service:load_model:63 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-10 22:03:34.419 | INFO     | model.pipeline.model:build_model:367 - Starting model building process...
+2025-08-10 22:03:34.419 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:03:34.419 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:03:34.424 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:03:34.424 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:03:34.425 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:03:34.425 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:03:34.426 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:03:34.426 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-10 22:03:34.426 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-10 22:03:34.426 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-10 22:03:34.426 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:03:34.426 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:03:34.426 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:03:34.427 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-10 22:03:34.427 | INFO     | db.db_service:__init__:33 - DatabaseService initialized
+2025-08-10 22:03:34.427 | INFO     | model.pipeline.model:__init__:74 - BinaryClassificationPipeline initialized
+2025-08-10 22:03:34.427 | INFO     | model.pipeline.model:train_and_validate:95 - Starting model training and validation...
+2025-08-10 22:03:34.427 | INFO     | model.pipeline.model:_log_memory_usage:85 - Memory usage: 82.8%
+2025-08-10 22:03:34.427 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:03:34.427 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:03:34.434 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:03:34.434 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:03:34.434 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:03:34.434 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-10 22:03:34.434 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-10 22:03:34.451 | INFO     | model.pipeline.model:train_and_validate:152 - Logistic Regression trained successfully:
+2025-08-10 22:03:34.452 | INFO     | model.pipeline.model:train_and_validate:153 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:03:34.452 | INFO     | model.pipeline.model:train_and_validate:156 -   Training time: 0.02s
+2025-08-10 22:03:34.452 | INFO     | model.pipeline.model:save_artifacts:267 - Saving model artifacts...
+2025-08-10 22:03:34.452 | INFO     | model.pipeline.model:_log_memory_usage:85 - Memory usage: 82.8%
+2025-08-10 22:03:34.460 | INFO     | db.db_service:cleanup_multiple_active_models:371 - Single active model found: logistic_regression_v1_20250810_220306
+2025-08-10 22:03:34.466 | INFO     | db.db_service:store_model:132 - Model logistic_regression_v1_20250810_220334 stored successfully with 2 metrics
+2025-08-10 22:03:34.466 | INFO     | model.pipeline.model:_store_model_in_database:339 - Model logistic_regression_v1_20250810_220334 stored in database successfully
+2025-08-10 22:03:34.466 | INFO     | model.pipeline.model:save_artifacts:296 - Artifacts saved to src/model/models/ml_pipeline_20250810_220334.pkl
+2025-08-10 22:03:34.466 | INFO     | model.pipeline.model:build_model:380 - Model building completed successfully
+2025-08-10 22:03:34.466 | INFO     | model.model_service:load_model:68 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-10 22:03:34.467 | INFO     | model.model_service:load_model:85 - Loaded pipeline from src/model/models/ml_pipeline_20250810_220334.pkl
+2025-08-10 22:03:34.467 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:03:34.468 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:03:34.468 | INFO     | __main__:main:51 - Loaded test data: (80, 10)
+2025-08-10 22:03:34.468 | INFO     | model.model_service:predict_batch:145 - Making batch predictions!
+2025-08-10 22:03:34.478 | INFO     | db.db_service:store_batch_predictions:308 - Batch stored 80 predictions successfully
+2025-08-10 22:03:34.480 | INFO     | __main__:main:60 - Predictions saved to ./data/test_labels.csv
+2025-08-10 22:03:34.480 | INFO     | __main__:main:61 - Prediction statistics:
+2025-08-10 22:03:34.480 | INFO     | __main__:main:62 -   Total predictions: 80
+2025-08-10 22:03:34.480 | INFO     | __main__:main:63 -   Class distribution: {-1: 38, 1: 42}
+2025-08-10 22:03:34.680 | INFO     | __main__:main:69 - Database prediction stats: {'total_predictions': 15499, 'class_distribution': {1: 15086, -1: 257, 0: 156}, 'avg_processing_time_ms': 5.1, 'latest_prediction': '2025-08-10T20:03:34'}
+2025-08-10 22:03:34.682 | INFO     | __main__:main:73 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'database': {'status': 'healthy', 'connection': 'ok', 'table_counts': {'ml_models': 44, 'predictions': 15499, 'data_artifacts': 31, 'performance_metrics': 60}}}
+2025-08-10 22:03:34.682 | INFO     | model.model_service:predict:110 - Making prediction!
+2025-08-10 22:03:34.685 | INFO     | __main__:main:78 - Sample prediction: [-1]
+2025-08-10 22:16:17.050 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-10 22:16:17.051 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-10 22:16:17.051 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-10 22:16:17.051 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-10 22:16:17.051 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-10 22:16:17.051 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:16:17.051 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:16:17.056 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:16:17.056 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:16:17.057 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:16:17.057 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:16:17.058 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:16:17.058 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-10 22:16:17.058 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-10 22:16:17.058 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-10 22:16:17.058 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:16:17.058 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:16:17.058 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:16:17.059 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-10 22:16:17.059 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-10 22:16:17.059 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-10 22:16:17.059 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 81.6%
+2025-08-10 22:16:17.059 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:16:17.059 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:16:17.066 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:16:17.066 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:16:17.066 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:16:17.066 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-10 22:16:17.066 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-10 22:16:17.083 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-10 22:16:17.083 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:16:17.084 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-10 22:16:17.084 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-10 22:16:17.084 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 81.6%
+2025-08-10 22:16:17.086 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250810_221617.pkl
+2025-08-10 22:16:17.086 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-10 22:16:17.086 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-10 22:16:17.086 | INFO     | model.pipeline.model:save_artifacts:294 -   Training time: 0.02s
+2025-08-10 22:16:17.086 | INFO     | model.pipeline.model:save_artifacts:295 -   Features used: 10
+2025-08-10 22:16:17.086 | INFO     | model.pipeline.model:save_artifacts:296 -   Training samples: 400
+2025-08-10 22:16:17.086 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-10 22:16:17.086 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-10 22:16:17.088 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250810_221617.pkl
+2025-08-10 22:16:17.088 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:16:17.089 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:16:17.089 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-10 22:16:17.089 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-10 22:16:17.089 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-10 22:16:17.091 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-10 22:16:17.091 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-10 22:16:17.091 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-10 22:16:17.091 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-10 22:16:17.091 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-10 22:16:17.092 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-10 22:16:17.092 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-10 22:16:17.092 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-10 22:18:28.978 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-10 22:18:28.979 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-10 22:18:28.979 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-10 22:18:28.979 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-10 22:18:28.979 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-10 22:18:28.979 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:18:28.979 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:18:28.983 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:18:28.983 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:18:28.984 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:18:28.984 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:18:28.985 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:18:28.985 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-10 22:18:28.985 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-10 22:18:28.985 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-10 22:18:28.986 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:18:28.986 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:18:28.986 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:18:28.986 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-10 22:18:28.986 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-10 22:18:28.986 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-10 22:18:28.986 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 80.6%
+2025-08-10 22:18:28.986 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:18:28.986 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:18:28.992 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:18:28.992 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:18:28.992 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:18:28.992 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-10 22:18:28.992 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-10 22:18:29.009 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-10 22:18:29.009 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:18:29.009 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-10 22:18:29.009 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-10 22:18:29.009 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 80.5%
+2025-08-10 22:18:29.011 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250810_221829.pkl
+2025-08-10 22:18:29.011 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-10 22:18:29.011 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-10 22:18:29.011 | INFO     | model.pipeline.model:save_artifacts:294 -   Training time: 0.02s
+2025-08-10 22:18:29.011 | INFO     | model.pipeline.model:save_artifacts:295 -   Features used: 10
+2025-08-10 22:18:29.011 | INFO     | model.pipeline.model:save_artifacts:296 -   Training samples: 400
+2025-08-10 22:18:29.011 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-10 22:18:29.011 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-10 22:18:29.012 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250810_221829.pkl
+2025-08-10 22:18:29.012 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:18:29.013 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:18:29.013 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-10 22:18:29.013 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-10 22:18:29.013 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-10 22:18:29.015 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-10 22:18:29.015 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-10 22:18:29.015 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-10 22:18:29.015 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-10 22:18:29.015 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-10 22:18:29.015 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-10 22:18:29.015 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-10 22:18:29.015 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-10 22:20:45.199 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-10 22:20:45.200 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-10 22:20:45.200 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-10 22:20:45.200 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-10 22:20:45.200 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-10 22:20:45.200 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:20:45.200 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:20:45.204 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:20:45.204 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:20:45.205 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:20:45.205 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:20:45.206 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:20:45.206 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-10 22:20:45.206 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-10 22:20:45.206 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-10 22:20:45.206 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:20:45.206 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:20:45.206 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:20:45.207 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-10 22:20:45.207 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-10 22:20:45.207 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-10 22:20:45.207 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 81.0%
+2025-08-10 22:20:45.207 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:20:45.207 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:20:45.213 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:20:45.213 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:20:45.213 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:20:45.214 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-10 22:20:45.214 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-10 22:20:45.232 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-10 22:20:45.232 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:20:45.232 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-10 22:20:45.232 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-10 22:20:45.232 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 81.0%
+2025-08-10 22:20:45.234 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250810_222045.pkl
+2025-08-10 22:20:45.234 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-10 22:20:45.234 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-10 22:20:45.234 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.02s
+2025-08-10 22:20:45.234 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-10 22:20:45.234 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-10 22:20:45.234 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-10 22:20:45.234 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-10 22:20:45.235 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250810_222045.pkl
+2025-08-10 22:20:45.235 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:20:45.236 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:20:45.236 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-10 22:20:45.236 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-10 22:20:45.237 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-10 22:20:45.239 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-10 22:20:45.239 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-10 22:20:45.239 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-10 22:20:45.239 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-10 22:20:45.239 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-10 22:20:45.239 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-10 22:20:45.240 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-10 22:20:45.240 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-10 22:21:34.177 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-10 22:21:34.177 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-10 22:21:34.177 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-10 22:21:34.178 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-10 22:21:34.178 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-10 22:21:34.178 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:21:34.178 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:21:34.182 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:21:34.182 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:21:34.183 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:21:34.183 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:21:34.184 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 80.8%
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:21:34.185 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:21:34.192 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:21:34.192 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:21:34.192 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:21:34.192 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-10 22:21:34.192 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-10 22:21:34.209 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-10 22:21:34.210 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:21:34.210 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-10 22:21:34.210 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-10 22:21:34.210 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 80.8%
+2025-08-10 22:21:34.212 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250810_222134.pkl
+2025-08-10 22:21:34.212 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-10 22:21:34.212 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-10 22:21:34.212 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.02s
+2025-08-10 22:21:34.212 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-10 22:21:34.212 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-10 22:21:34.212 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-10 22:21:34.212 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-10 22:21:34.213 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250810_222134.pkl
+2025-08-10 22:21:34.213 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:21:34.214 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:21:34.214 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-10 22:21:34.214 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-10 22:21:34.215 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-10 22:21:34.217 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-10 22:21:34.217 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-10 22:21:34.217 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-10 22:21:34.217 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-10 22:21:34.217 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-10 22:21:34.217 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-10 22:21:34.218 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-10 22:21:34.218 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-10 22:22:41.191 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-10 22:22:41.191 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-10 22:22:41.191 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-10 22:22:41.191 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-10 22:22:41.191 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-10 22:22:41.192 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:22:41.192 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:22:41.196 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:22:41.196 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:22:41.197 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:22:41.197 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 81.0%
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:22:41.198 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:22:41.205 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:22:41.205 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:22:41.205 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:22:41.205 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-10 22:22:41.205 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-10 22:22:41.221 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-10 22:22:41.221 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:22:41.221 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-10 22:22:41.221 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-10 22:22:41.221 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 81.0%
+2025-08-10 22:22:41.223 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250810_222241.pkl
+2025-08-10 22:22:41.223 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-10 22:22:41.223 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-10 22:22:41.223 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.02s
+2025-08-10 22:22:41.223 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-10 22:22:41.223 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-10 22:22:41.223 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-10 22:22:41.223 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-10 22:22:41.225 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250810_222241.pkl
+2025-08-10 22:22:41.225 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:22:41.225 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:22:41.225 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-10 22:22:41.225 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-10 22:22:41.226 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-10 22:22:41.227 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-10 22:22:41.227 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-10 22:22:41.227 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-10 22:22:41.227 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-10 22:22:41.227 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-10 22:22:41.228 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-10 22:22:41.228 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-10 22:22:41.228 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-10 22:24:18.324 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-10 22:24:18.325 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:24:18.325 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:24:18.329 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:24:18.329 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:24:18.330 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:24:18.330 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:24:18.331 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:24:18.331 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-10 22:24:18.331 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-10 22:24:18.331 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-10 22:24:18.331 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:24:18.331 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:24:18.331 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:24:18.331 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-10 22:24:18.332 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-10 22:24:18.332 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-10 22:24:18.332 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 81.4%
+2025-08-10 22:24:18.332 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:24:18.332 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:24:18.337 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:24:18.337 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:24:18.337 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:24:18.337 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-10 22:24:18.337 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-10 22:24:18.355 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-10 22:24:18.355 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:24:18.355 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-10 22:24:18.355 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-10 22:24:18.355 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 81.5%
+2025-08-10 22:24:18.356 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250810_222418.pkl
+2025-08-10 22:24:18.356 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-10 22:24:18.356 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-10 22:24:18.356 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.02s
+2025-08-10 22:24:18.356 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-10 22:24:18.357 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-10 22:24:18.357 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-10 22:24:24.840 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-10 22:24:24.841 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-10 22:24:24.841 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-10 22:24:24.841 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-10 22:24:24.841 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-10 22:24:24.841 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:24:24.841 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:24:24.844 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:24:24.844 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:24:24.845 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:24:24.845 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:24:24.846 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 82.5%
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:24:24.847 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:24:24.851 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:24:24.851 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:24:24.851 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:24:24.851 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-10 22:24:24.852 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-10 22:24:24.866 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-10 22:24:24.867 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:24:24.867 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.01s
+2025-08-10 22:24:24.867 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-10 22:24:24.867 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 82.6%
+2025-08-10 22:24:24.869 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250810_222424.pkl
+2025-08-10 22:24:24.869 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-10 22:24:24.869 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-10 22:24:24.869 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.01s
+2025-08-10 22:24:24.869 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-10 22:24:24.869 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-10 22:24:24.869 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-10 22:24:24.869 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-10 22:24:24.870 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250810_222424.pkl
+2025-08-10 22:24:24.870 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:24:24.871 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:24:24.871 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-10 22:24:24.871 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-10 22:24:24.872 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-10 22:24:24.874 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-10 22:24:24.874 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-10 22:24:24.874 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-10 22:24:24.874 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-10 22:24:24.874 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-10 22:24:24.874 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-10 22:24:24.875 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-10 22:24:24.875 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-10 22:25:00.604 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-10 22:25:00.604 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-10 22:25:00.604 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-10 22:25:00.604 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-10 22:25:00.605 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-10 22:25:00.605 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-10 22:25:00.605 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-10 22:25:00.609 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-10 22:25:00.609 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-10 22:25:00.609 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-10 22:25:00.609 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:25:00.610 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:25:00.610 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-10 22:25:00.610 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-10 22:25:00.611 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-10 22:25:00.611 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-10 22:25:00.611 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-10 22:25:00.611 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-10 22:25:00.611 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-10 22:25:00.611 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-10 22:25:00.611 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-10 22:25:00.611 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 81.7%
+2025-08-10 22:25:00.611 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-10 22:25:00.611 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-10 22:25:00.616 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-10 22:25:00.616 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-10 22:25:00.616 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-10 22:25:00.617 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-10 22:25:00.617 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-10 22:25:00.632 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-10 22:25:00.632 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-10 22:25:00.632 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-10 22:25:00.632 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-10 22:25:00.632 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 81.7%
+2025-08-10 22:25:00.634 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250810_222500.pkl
+2025-08-10 22:25:00.634 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-10 22:25:00.634 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-10 22:25:00.634 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.02s
+2025-08-10 22:25:00.634 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-10 22:25:00.634 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-10 22:25:00.634 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-10 22:25:00.634 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-10 22:25:00.635 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250810_222500.pkl
+2025-08-10 22:25:00.635 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-10 22:25:00.636 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-10 22:25:00.636 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-10 22:25:00.636 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-10 22:25:00.636 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-10 22:25:00.637 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-10 22:25:00.637 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-10 22:25:00.637 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-10 22:25:00.637 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-10 22:25:00.637 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-10 22:25:00.637 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-10 22:25:00.638 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-10 22:25:00.638 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-11 11:27:57.008 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-11 11:27:57.009 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-11 11:27:57.009 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-11 11:27:57.009 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-11 11:27:57.009 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-11 11:27:57.009 | INFO     | model.pipeline.preparation:prepare_data:110 - Starting data preparation...
+2025-08-11 11:27:57.009 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-11 11:27:57.013 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-11 11:27:57.013 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-11 11:27:57.013 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-11 11:27:57.013 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 11:27:57.014 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 11:27:57.014 | INFO     | model.pipeline.preparation:_validate_data:171 - Converting label format from [0 1] to [-1, 1]
+2025-08-11 11:27:57.014 | INFO     | model.pipeline.preparation:_validate_data:175 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-11 11:27:57.014 | INFO     | model.pipeline.preparation:_validate_data:185 - Data validation passed
+2025-08-11 11:27:57.014 | INFO     | model.pipeline.preparation:prepare_data:128 - Data preparation completed:
+2025-08-11 11:27:57.014 | INFO     | model.pipeline.preparation:prepare_data:129 -   Training samples: 400, Features: 10
+2025-08-11 11:27:57.014 | INFO     | model.pipeline.preparation:prepare_data:132 -   Test samples: 80
+2025-08-11 11:27:57.014 | INFO     | model.pipeline.preparation:prepare_data:133 -   Class distribution: {-1: 204, 1: 196}
+2025-08-11 11:27:57.015 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-11 11:27:57.015 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-11 11:27:57.015 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 71.2%
+2025-08-11 11:27:57.015 | INFO     | model.pipeline.preparation:__init__:40 - FeatureProcessor initialized
+2025-08-11 11:27:57.015 | INFO     | model.pipeline.preparation:fit:54 - Fitting feature preprocessing pipeline...
+2025-08-11 11:27:57.020 | INFO     | model.pipeline.preparation:fit:68 - Feature preprocessing completed:
+2025-08-11 11:27:57.020 | INFO     | model.pipeline.preparation:fit:69 -   Original samples: 400
+2025-08-11 11:27:57.020 | INFO     | model.pipeline.preparation:fit:70 -   Resampled samples: 408
+2025-08-11 11:27:57.020 | INFO     | model.pipeline.preparation:fit:71 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-11 11:27:57.020 | INFO     | model.pipeline.preparation:fit:74 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-11 11:27:57.038 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-11 11:27:57.038 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-11 11:27:57.038 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-11 11:27:57.038 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-11 11:27:57.038 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 71.2%
+2025-08-11 11:27:57.040 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250811_112757.pkl
+2025-08-11 11:27:57.040 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-11 11:27:57.040 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-11 11:27:57.040 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.02s
+2025-08-11 11:27:57.040 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-11 11:27:57.040 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-11 11:27:57.040 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-11 11:27:57.040 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-11 11:27:57.040 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250811_112757.pkl
+2025-08-11 11:27:57.040 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 11:27:57.041 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 11:27:57.041 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-11 11:27:57.041 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-11 11:27:57.041 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-11 11:27:57.043 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-11 11:27:57.043 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-11 11:27:57.043 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-11 11:27:57.044 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-11 11:27:57.044 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-11 11:27:57.044 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-11 11:27:57.044 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-11 11:27:57.044 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-11 12:23:02.489 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-11 12:23:02.490 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-11 12:23:02.490 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-11 12:23:02.490 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-11 12:23:02.490 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-11 12:23:02.490 | INFO     | model.pipeline.preparation:prepare_data:107 - Starting data preparation...
+2025-08-11 12:23:02.490 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-11 12:23:02.495 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-11 12:23:02.495 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-11 12:23:02.496 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-11 12:23:02.496 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 12:23:02.497 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 12:23:02.497 | INFO     | model.pipeline.preparation:_validate_data:168 - Converting label format from [0 1] to [-1, 1]
+2025-08-11 12:23:02.497 | INFO     | model.pipeline.preparation:_validate_data:172 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-11 12:23:02.498 | INFO     | model.pipeline.preparation:_validate_data:182 - Data validation passed
+2025-08-11 12:23:02.498 | INFO     | model.pipeline.preparation:prepare_data:125 - Data preparation completed:
+2025-08-11 12:23:02.498 | INFO     | model.pipeline.preparation:prepare_data:126 -   Training samples: 400, Features: 10
+2025-08-11 12:23:02.498 | INFO     | model.pipeline.preparation:prepare_data:129 -   Test samples: 80
+2025-08-11 12:23:02.498 | INFO     | model.pipeline.preparation:prepare_data:130 -   Class distribution: {-1: 204, 1: 196}
+2025-08-11 12:23:02.498 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-11 12:23:02.498 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-11 12:23:02.498 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 68.6%
+2025-08-11 12:23:02.498 | INFO     | model.pipeline.preparation:__init__:37 - FeatureProcessor initialized
+2025-08-11 12:23:02.498 | INFO     | model.pipeline.preparation:fit:51 - Fitting feature preprocessing pipeline...
+2025-08-11 12:23:02.504 | INFO     | model.pipeline.preparation:fit:65 - Feature preprocessing completed:
+2025-08-11 12:23:02.504 | INFO     | model.pipeline.preparation:fit:66 -   Original samples: 400
+2025-08-11 12:23:02.505 | INFO     | model.pipeline.preparation:fit:67 -   Resampled samples: 408
+2025-08-11 12:23:02.505 | INFO     | model.pipeline.preparation:fit:68 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-11 12:23:02.505 | INFO     | model.pipeline.preparation:fit:71 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-11 12:23:02.533 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-11 12:23:02.533 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-11 12:23:02.533 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.03s
+2025-08-11 12:23:02.533 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-11 12:23:02.533 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 68.6%
+2025-08-11 12:23:02.535 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250811_122302.pkl
+2025-08-11 12:23:02.535 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-11 12:23:02.535 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-11 12:23:02.535 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.03s
+2025-08-11 12:23:02.535 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-11 12:23:02.535 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-11 12:23:02.535 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-11 12:23:02.535 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-11 12:23:02.536 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250811_122302.pkl
+2025-08-11 12:23:02.536 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 12:23:02.537 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 12:23:02.537 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-11 12:23:02.537 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-11 12:23:02.538 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-11 12:23:02.539 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-11 12:23:02.539 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-11 12:23:02.539 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-11 12:23:02.539 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-11 12:23:02.540 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-11 12:23:02.540 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-11 12:23:02.540 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-11 12:23:02.540 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-11 12:32:36.104 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-11 12:32:36.104 | INFO     | model.pipeline.preparation:prepare_data:107 - Starting data preparation...
+2025-08-11 12:32:36.104 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-11 12:32:36.108 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-11 12:32:36.108 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-11 12:32:36.109 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-11 12:32:36.109 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.preparation:_validate_data:168 - Converting label format from [0 1] to [-1, 1]
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.preparation:_validate_data:172 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.preparation:_validate_data:182 - Data validation passed
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.preparation:prepare_data:125 - Data preparation completed:
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.preparation:prepare_data:126 -   Training samples: 400, Features: 10
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.preparation:prepare_data:129 -   Test samples: 80
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.preparation:prepare_data:130 -   Class distribution: {-1: 204, 1: 196}
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 69.4%
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.preparation:__init__:37 - FeatureProcessor initialized
+2025-08-11 12:32:36.110 | INFO     | model.pipeline.preparation:fit:51 - Fitting feature preprocessing pipeline...
+2025-08-11 12:32:36.116 | INFO     | model.pipeline.preparation:fit:65 - Feature preprocessing completed:
+2025-08-11 12:32:36.116 | INFO     | model.pipeline.preparation:fit:66 -   Original samples: 400
+2025-08-11 12:32:36.116 | INFO     | model.pipeline.preparation:fit:67 -   Resampled samples: 408
+2025-08-11 12:32:36.116 | INFO     | model.pipeline.preparation:fit:68 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-11 12:32:36.116 | INFO     | model.pipeline.preparation:fit:71 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-11 12:32:36.132 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-11 12:32:36.132 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-11 12:32:36.132 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-11 12:32:36.132 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-11 12:32:36.132 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 69.4%
+2025-08-11 12:32:36.134 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250811_123236.pkl
+2025-08-11 12:32:36.134 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-11 12:32:36.134 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-11 12:32:36.134 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.02s
+2025-08-11 12:32:36.134 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-11 12:32:36.134 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-11 12:32:36.134 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-11 12:32:45.583 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-11 12:32:45.583 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-11 12:32:45.583 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-11 12:32:45.583 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-11 12:32:45.583 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-11 12:32:45.583 | INFO     | model.pipeline.preparation:prepare_data:107 - Starting data preparation...
+2025-08-11 12:32:45.583 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-11 12:32:45.586 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-11 12:32:45.586 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-11 12:32:45.587 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-11 12:32:45.587 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 12:32:45.587 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 12:32:45.587 | INFO     | model.pipeline.preparation:_validate_data:168 - Converting label format from [0 1] to [-1, 1]
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.preparation:_validate_data:172 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.preparation:_validate_data:182 - Data validation passed
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.preparation:prepare_data:125 - Data preparation completed:
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.preparation:prepare_data:126 -   Training samples: 400, Features: 10
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.preparation:prepare_data:129 -   Test samples: 80
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.preparation:prepare_data:130 -   Class distribution: {-1: 204, 1: 196}
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 69.5%
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.preparation:__init__:37 - FeatureProcessor initialized
+2025-08-11 12:32:45.588 | INFO     | model.pipeline.preparation:fit:51 - Fitting feature preprocessing pipeline...
+2025-08-11 12:32:45.592 | INFO     | model.pipeline.preparation:fit:65 - Feature preprocessing completed:
+2025-08-11 12:32:45.592 | INFO     | model.pipeline.preparation:fit:66 -   Original samples: 400
+2025-08-11 12:32:45.592 | INFO     | model.pipeline.preparation:fit:67 -   Resampled samples: 408
+2025-08-11 12:32:45.592 | INFO     | model.pipeline.preparation:fit:68 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-11 12:32:45.592 | INFO     | model.pipeline.preparation:fit:71 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-11 12:32:45.605 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-11 12:32:45.605 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-11 12:32:45.605 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.01s
+2025-08-11 12:32:45.605 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-11 12:32:45.605 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 69.5%
+2025-08-11 12:32:45.607 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250811_123245.pkl
+2025-08-11 12:32:45.607 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-11 12:32:45.607 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-11 12:32:45.607 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.01s
+2025-08-11 12:32:45.607 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-11 12:32:45.607 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-11 12:32:45.607 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-11 12:32:45.607 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-11 12:32:45.608 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250811_123245.pkl
+2025-08-11 12:32:45.608 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 12:32:45.609 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 12:32:45.609 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-11 12:32:45.609 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-11 12:32:45.609 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-11 12:32:45.610 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-11 12:32:45.611 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-11 12:32:45.611 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-11 12:32:45.611 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-11 12:32:45.611 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-11 12:32:45.611 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-11 12:32:45.611 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-11 12:32:45.611 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-11 12:34:08.995 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-11 12:34:08.995 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-11 12:34:08.995 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-11 12:34:08.996 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-11 12:34:08.996 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-11 12:34:08.996 | INFO     | model.pipeline.preparation:prepare_data:107 - Starting data preparation...
+2025-08-11 12:34:08.996 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-11 12:34:08.999 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-11 12:34:08.999 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-11 12:34:09.000 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-11 12:34:09.000 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 12:34:09.001 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.preparation:_validate_data:168 - Converting label format from [0 1] to [-1, 1]
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.preparation:_validate_data:172 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.preparation:_validate_data:182 - Data validation passed
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.preparation:prepare_data:125 - Data preparation completed:
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.preparation:prepare_data:126 -   Training samples: 400, Features: 10
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.preparation:prepare_data:129 -   Test samples: 80
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.preparation:prepare_data:130 -   Class distribution: {-1: 204, 1: 196}
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 69.0%
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.preparation:__init__:37 - FeatureProcessor initialized
+2025-08-11 12:34:09.002 | INFO     | model.pipeline.preparation:fit:51 - Fitting feature preprocessing pipeline...
+2025-08-11 12:34:09.008 | INFO     | model.pipeline.preparation:fit:65 - Feature preprocessing completed:
+2025-08-11 12:34:09.008 | INFO     | model.pipeline.preparation:fit:66 -   Original samples: 400
+2025-08-11 12:34:09.008 | INFO     | model.pipeline.preparation:fit:67 -   Resampled samples: 408
+2025-08-11 12:34:09.008 | INFO     | model.pipeline.preparation:fit:68 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-11 12:34:09.009 | INFO     | model.pipeline.preparation:fit:71 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-11 12:34:09.025 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-11 12:34:09.025 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-11 12:34:09.026 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-11 12:34:09.026 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-11 12:34:09.026 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 69.0%
+2025-08-11 12:34:09.028 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250811_123409.pkl
+2025-08-11 12:34:09.028 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-11 12:34:09.028 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-11 12:34:09.028 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.02s
+2025-08-11 12:34:09.028 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-11 12:34:09.028 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-11 12:34:09.028 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-11 12:34:09.028 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-11 12:34:09.029 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250811_123409.pkl
+2025-08-11 12:34:09.029 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 12:34:09.030 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 12:34:09.030 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-11 12:34:09.030 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-11 12:34:09.030 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-11 12:34:09.031 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-11 12:34:09.031 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-11 12:34:09.032 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-11 12:34:09.032 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-11 12:34:09.032 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-11 12:34:09.032 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-11 12:34:09.032 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-11 12:34:09.032 | INFO     | __main__:main:69 - Application completed successfully!
+2025-08-11 13:28:42.517 | INFO     | __main__:main:34 - Running the binary classification application...
+2025-08-11 13:28:42.517 | INFO     | model.model_service:__init__:40 - ModelService initialized
+2025-08-11 13:28:42.517 | INFO     | model.model_service:load_model:52 - Checking the existence of model config file at ./src/model/models/logistic_regression_v1
+2025-08-11 13:28:42.518 | WARNING  | model.model_service:load_model:60 - Model at src/model/models/logistic_regression_v1 was not found -> building logistic_regression_v1
+2025-08-11 13:28:42.518 | INFO     | model.pipeline.model:build_model:327 - Starting model building process...
+2025-08-11 13:28:42.518 | INFO     | model.pipeline.preparation:prepare_data:107 - Starting data preparation...
+2025-08-11 13:28:42.518 | INFO     | model.pipeline.collection:load_data:28 - Loading data from ./data/train_data.csv
+2025-08-11 13:28:42.522 | INFO     | model.pipeline.collection:load_data:32 - Data loaded successfully: (400, 10)
+2025-08-11 13:28:42.522 | INFO     | model.pipeline.collection:load_labels:52 - Loading labels from ./data/train_labels.csv
+2025-08-11 13:28:42.523 | INFO     | model.pipeline.collection:load_labels:56 - Labels loaded successfully: (400,)
+2025-08-11 13:28:42.523 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.preparation:_validate_data:168 - Converting label format from [0 1] to [-1, 1]
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.preparation:_validate_data:172 - Successfully converted [0, 1] labels to [-1, 1] format
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.preparation:_validate_data:182 - Data validation passed
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.preparation:prepare_data:125 - Data preparation completed:
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.preparation:prepare_data:126 -   Training samples: 400, Features: 10
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.preparation:prepare_data:129 -   Test samples: 80
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.preparation:prepare_data:130 -   Class distribution: {-1: 204, 1: 196}
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.model:__init__:72 - BinaryClassificationPipeline initialized
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.model:train_and_validate:93 - Starting model training and validation...
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 73.5%
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.preparation:__init__:37 - FeatureProcessor initialized
+2025-08-11 13:28:42.524 | INFO     | model.pipeline.preparation:fit:51 - Fitting feature preprocessing pipeline...
+2025-08-11 13:28:42.530 | INFO     | model.pipeline.preparation:fit:65 - Feature preprocessing completed:
+2025-08-11 13:28:42.530 | INFO     | model.pipeline.preparation:fit:66 -   Original samples: 400
+2025-08-11 13:28:42.530 | INFO     | model.pipeline.preparation:fit:67 -   Resampled samples: 408
+2025-08-11 13:28:42.530 | INFO     | model.pipeline.preparation:fit:68 -   Original class distribution: {-1: 204, 1: 196}
+2025-08-11 13:28:42.530 | INFO     | model.pipeline.preparation:fit:71 -   Resampled class distribution: {-1: 204, 1: 204}
+2025-08-11 13:28:42.546 | INFO     | model.pipeline.model:train_and_validate:150 - Logistic Regression trained successfully:
+2025-08-11 13:28:42.546 | INFO     | model.pipeline.model:train_and_validate:151 -   ROC-AUC = 0.4863 (+/- 0.0423)
+2025-08-11 13:28:42.546 | INFO     | model.pipeline.model:train_and_validate:154 -   Training time: 0.02s
+2025-08-11 13:28:42.546 | INFO     | model.pipeline.model:save_artifacts:265 - Saving model artifacts...
+2025-08-11 13:28:42.546 | INFO     | model.pipeline.model:_log_memory_usage:83 - Memory usage: 73.5%
+2025-08-11 13:28:42.548 | INFO     | model.pipeline.model:save_artifacts:291 - Artifacts saved to src/model/models/ml_pipeline_20250811_132842.pkl
+2025-08-11 13:28:42.548 | INFO     | model.pipeline.model:save_artifacts:292 - Model metrics:
+2025-08-11 13:28:42.548 | INFO     | model.pipeline.model:save_artifacts:293 -   ROC-AUC: 0.4863 (+/- 0.0423)
+2025-08-11 13:28:42.548 | INFO     | model.pipeline.model:save_artifacts:296 -   Training time: 0.02s
+2025-08-11 13:28:42.548 | INFO     | model.pipeline.model:save_artifacts:297 -   Features used: 10
+2025-08-11 13:28:42.548 | INFO     | model.pipeline.model:save_artifacts:298 -   Training samples: 400
+2025-08-11 13:28:42.548 | INFO     | model.pipeline.model:build_model:340 - Model building completed successfully
+2025-08-11 13:28:42.548 | INFO     | model.model_service:load_model:65 - Model logistic_regression_v1 exists! -> loading model configuration file
+2025-08-11 13:28:42.549 | INFO     | model.model_service:load_model:82 - Loaded pipeline from src/model/models/ml_pipeline_20250811_132842.pkl
+2025-08-11 13:28:42.549 | INFO     | model.pipeline.collection:load_test_data:76 - Loading test data from ./data/test_data.csv
+2025-08-11 13:28:42.550 | INFO     | model.pipeline.collection:load_test_data:80 - Test data loaded successfully: (80, 10)
+2025-08-11 13:28:42.550 | INFO     | __main__:main:44 - Loaded test data: (80, 10)
+2025-08-11 13:28:42.550 | INFO     | model.model_service:predict_batch:140 - Making batch predictions!
+2025-08-11 13:28:42.551 | INFO     | model.model_service:predict_batch:151 - Batch predictions completed for 80 samples
+2025-08-11 13:28:42.552 | INFO     | __main__:main:53 - Predictions saved to ./data/test_labels.csv
+2025-08-11 13:28:42.552 | INFO     | __main__:main:54 - Prediction statistics:
+2025-08-11 13:28:42.552 | INFO     | __main__:main:55 -   Total predictions: 80
+2025-08-11 13:28:42.553 | INFO     | __main__:main:56 -   Class distribution: {-1: 38, 1: 42}
+2025-08-11 13:28:42.553 | INFO     | __main__:main:62 - Health Check: {'model_loaded': True, 'feature_processor_ready': True, 'model_info': {'model_type': 'LogisticRegression', 'feature_processor_loaded': True, 'model_parameters': {'C': 0.1, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'deprecated', 'n_jobs': None, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}, 'n_features': 10}, 'status': 'healthy'}
+2025-08-11 13:28:42.553 | INFO     | model.model_service:predict:107 - Making prediction!
+2025-08-11 13:28:42.553 | INFO     | __main__:main:67 - Sample prediction: [-1]
+2025-08-11 13:28:42.553 | INFO     | __main__:main:69 - Application completed successfully!

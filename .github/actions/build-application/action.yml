@@ -1,0 +1,48 @@
+name: Build Application
+
+runs:
+  using: composite
+
+  steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  - name: Detect project directory
+    id: detect
+    shell: bash
+    run: |
+      set -euo pipefail
+      if [ -f "pyproject.toml" ]; then
+        wd="."
+      else
+        first=$(git ls-files "**/pyproject.toml" | head -n1 || true)
+        if [ -z "$first" ]; then
+          echo "pyproject.toml not found" >&2
+          exit 1
+        fi
+        wd=$(dirname "$first")
+      fi
+      echo "WORKDIR=$wd" >> "$GITHUB_ENV"
+
+  - name: Set up Python 3.12.2
+    uses: actions/setup-python@v5
+    with:
+      python-version: '3.12.2'
+
+  - name: Install poetry
+    uses: snok/install-poetry@v1
+    with:
+      virtualenvs-in-project: true
+    
+  - name: Load cached venv
+    uses: actions/cache@v4
+    id: cached-poetry-dependencies
+    with:
+      path: ${{ env.WORKDIR }}/.venv
+      key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
+  - name: Install dependencies using poetry
+    if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+    working-directory: ${{ env.WORKDIR }}
+    run: poetry run make install
+    shell: bash

@@ -1,0 +1,47 @@
+# Test Workflow
+
+name: Test Workflow 
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Detect project directory
+      id: proj
+      shell: bash
+      run: |
+        if [ -f "pyproject.toml" ]; then
+          echo "dir=." >> "$GITHUB_OUTPUT"
+        else
+          first=$(git ls-files "**/pyproject.toml" | head -n1 || true)
+          if [ -z "$first" ]; then
+            echo "No pyproject.toml found" >&2
+            exit 1
+          fi
+          echo "dir=$(dirname "$first")" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Build application
+      uses: ./.github/actions/build-application
+
+    - name: Run unit tests
+      run: poetry run pytest tests/ -v --tb=short
+      working-directory: ${{ steps.proj.outputs.dir }}
