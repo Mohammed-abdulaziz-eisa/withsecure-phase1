@@ -44,7 +44,9 @@ the idea is to move from a single big (monolithic) app to a microservices setup,
 
 ### Last Phase i called it `Model Inference API`
 
-- it's the same with MLops task assignment but depend on the second phase without training model again or we just call `model_infernce_service` also i made it before in my previous project: [Rental Price Prediction App to Micro Transformation API Development](https://github.com/Mohammed-abdulaziz-eisa/Rental-Price-Prediction-App-to-Micro-Transformation-API-Development). 
+- it's the same with MLops task assignment 
+
+but any other task or project i worked on, it be depend on the second phase without training model again or we just call `model_infernce_service` also i made it before in my previous project: [Rental Price Prediction App to Micro Transformation API Development](https://github.com/Mohammed-abdulaziz-eisa/Rental-Price-Prediction-App-to-Micro-Transformation-API-Development). 
 
 - but in this assisment i prefer to use the same mlops task structure to not confuse the reviwer of the task 
 
